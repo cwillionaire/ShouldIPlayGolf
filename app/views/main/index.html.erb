@@ -1,14 +1,7 @@
 <div class="container">
-  <form class="form-signin">
-    <h2 class="form-signin-heading">Should I Play Golf?</h2>
-    <label for="inputZipCode" class="sr-only">Zip Code</label>
-    <input type="text" id="inputZipCode" class="form-control" placeholder="Zip Code" required="" autofocus="">
-    <label for="inputDate" class="sr-only">Date</label>
-    <input type="date" id="inputDate" class="form-control" placeholder="Date" required="">
-    <label for="inputTime" class="sr-only">Date</label>
-    <input type="time" id="inputTime" class="form-control" placeholder="Time" required="">
-
-    <button class="btn btn-lg btn-primary btn-block" type="submit">Should I Play Golf?</button>
-  </form>
-
-</div> <!-- /container -->
+  <%= form_tag forecast_path, method: :get do %>
+  <label for="zip_code">Zip Code</label>
+  <%= text_field_tag :zip_code %>
+  <%= submit_tag "Should I Play Golf?" %>
+<% end %>
+</div>
