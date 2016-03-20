@@ -3,7 +3,6 @@ class MainController < ApplicationController
   end
 
   def show
-    api = Wunderground.new
-    @forecast = api.forecast_for(params[:zip_code])
+    @forecast = Wunderground::Resources.forecast(zip: params[:zip_code])
   end
 end
