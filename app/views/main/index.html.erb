@@ -1,7 +1,6 @@
 <div class="container">
-  <%= form_tag forecast_path, method: :get do %>
-  <label for="zip_code">Zip Code</label>
-  <%= text_field_tag :zip_code %>
-  <%= submit_tag "Should I Play Golf?" %>
-<% end %>
+  <%= form_tag forecast_path, method: :get, remote: true do %>
+    <%= text_field_tag :zip_code, nil, placeholder: "Enter Zip Code...", id: "zip-code-input" %>
+    <%= submit_tag "Should I Play Golf?" %>
+  <% end %>
 </div>
