@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 gem 'bootstrap-sass'
 gem 'coffee-rails', '~> 4.1.0'
+gem 'dotenv-rails'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'rails', '4.2.4'
@@ -15,7 +16,6 @@ group :development, :test do
   gem 'byebug'
   gem 'capybara'
   gem 'capybara-webkit'
-  gem 'dotenv-rails'
   gem 'rspec-rails'
 end
 
