@@ -3,7 +3,7 @@ class MainController < ApplicationController
   end
 
   def show
-    @forecast = Wunderground::Resources.forecast(zip: params[:zip_code])
+    @forecast = Wunderground::Resources.forecast(lat: params[:locationLat], long: params[:locationLong])
     respond_to do |format|
       format.js
     end

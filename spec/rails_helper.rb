@@ -9,8 +9,11 @@ require 'capybara/rails'
 
 Capybara.javascript_driver = :webkit
 Capybara::Webkit.configure do |config|
-    config.allow_url("icons.wxug.com")
-  end
+  config.allow_url("icons.wxug.com")
+  config.allow_url("maps.googleapis.com")
+  config.allow_url("maps.gstatic.com")
+  config.allow_url("csi.gstatic.com")
+end
 
 # Add additional requires below this line. Rails is not loaded until this point!
 

@@ -1,6 +1,29 @@
-<div class="container">
-  <%= form_tag forecast_path, method: :get, remote: true do %>
-    <%= text_field_tag :zip_code, nil, placeholder: "Enter Zip Code...", id: "zip-code-input" %>
-    <%= submit_tag "Should I Play Golf?" %>
-  <% end %>
+
+<div class="container form-container">
+  <h1 class="form-container-heading">Should I Play Golf? <i class="fa fa-lg fa-flag-o"></i></h1>
+  <h5 class="form-container-heading">Enter your course and tee time and we'll tell you if you should play golf</h5>
+  <div id="form-content">
+    <%= form_tag forecast_path, method: :get, remote: true do %>
+      <div class="form-group">
+        <%= text_field_tag :location, nil, placeholder: "Find Your Course...", id: "location-input", class: "form-control", autocomplete: 'off' %>
+        <input type="hidden" id="locationLat" name="locationLat" />
+        <input type="hidden" id="locationLong" name="locationLong" />
+      </div>
+      <div class="form-group">
+        <div class='input-group date datetimepicker'>
+          <input name="tee_time" id="tee-time-input" class="form-control" type="text" placeholder="Enter Tee Time..." aria-describedby="calendar-addon">
+          <span class="input-group-addon" id="calendar-addon"><i class="fa fa-lg fa-calendar"></i></span>
+        </div>
+      </div>
+    <%= submit_tag "Should I Play Golf?", class: "btn btn-lg btn-success btn-block" %>
+    <% end %>
+  </div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <div id="powered-by-wunderground">
+    <div><strong>Powered by </strong><a href="https://www.wunderground.com/?apiref=11663b49b944db11"><%= image_tag "wunderground_logo", height: '24' %></a></div>
+  </div>
 </div>
