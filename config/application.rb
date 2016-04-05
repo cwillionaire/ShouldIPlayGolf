@@ -6,10 +6,6 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-Dotenv::Railtie.load
-
-Wunderground.api_key = ENV['WUNDERGROUND_API_KEY']
-
 module Shouldiplaygolf
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
