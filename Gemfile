@@ -5,6 +5,7 @@ gem 'coffee-rails', '~> 4.1.0'
 gem 'datetimepicker-rails', github: 'zpaulovics/datetimepicker-rails', branch: 'master', submodules: true
 gem 'dotenv-rails'
 gem 'font-awesome-sass'
+gem 'headless'
 gem 'jbuilder', '~> 2.0'
 gem 'jquery-rails'
 gem 'momentjs-rails'

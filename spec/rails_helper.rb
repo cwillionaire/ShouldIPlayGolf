@@ -7,6 +7,17 @@ require 'spec_helper'
 require 'rspec/rails'
 require 'capybara/rails'
 
+begin
+  # headless is a Ruby interface for xvfb which is required for capybara to
+  # run in our production env. However, it is only compatible with Linux.
+  # more on headless: https://github.com/leonid-shevtsov/headless
+  require 'headless'
+  headless = Headless.new
+  headless.start
+rescue
+  puts "This is not a linux server environment, skipping headless gem for spec"
+end
+
 Capybara.javascript_driver = :webkit
 Capybara::Webkit.configure do |config|
   config.allow_url("icons.wxug.com")
